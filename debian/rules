@@ -1,0 +1,11 @@
+#!/usr/bin/make -f
+export PYBUILD_NAME=apipkg
+
+%:
+	dh $@ --buildsystem=pybuild --with python3
+
+override_dh_auto_test:
+	PYBUILD_SYSTEM=custom PYBUILD_TEST_ARGS="{interpreter} -m pytest -v -x" dh_auto_test
+
+override_dh_installdocs:
+	dh_installdocs -A README.rst

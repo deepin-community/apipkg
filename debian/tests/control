@@ -1,0 +1,2 @@
+Tests: python3-apipkg
+Depends: python3-all, python3-apipkg, python3-setuptools, python3-pytest, python3-py
